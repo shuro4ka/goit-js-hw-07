@@ -26,10 +26,19 @@ return galleryItems
 
 }
 
+// function onImageClick(event){
+//     event.preventDefault();
+//     if(event.target.nodeMode !== "IMG") {
+//         return;
+//     }
+//     console.log(event.target);
+// }
+
 function onImageClick(event){
-    event.preventDefault();
-    if(event.target.nodeMode !== "IMG") {
-        return;
-    }
-    console.log(event.target);
+  event.preventDefault();
+const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+`)
+
+instance.show();
 }
