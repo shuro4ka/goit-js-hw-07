@@ -5,7 +5,7 @@ const imagesMarkup = createGalleryMurkup(galleryItems);
 galleryContainer.insertAdjacentHTML('beforeend', imagesMarkup);
 galleryContainer.addEventListener('click', onImageClick);
 
-console.log(createGalleryMurkup(galleryItems));
+createGalleryMurkup(galleryItems)
 
 function createGalleryMurkup (galleryItems){
 return galleryItems
@@ -21,5 +21,9 @@ return galleryItems
     .join('');
 
 }
-console.log(galleryItems);
 
+var lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+
+function onImageClick(event) {
+  event.preventDefault();
+}
